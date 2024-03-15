@@ -17,6 +17,7 @@ import 'package:starter_architecture_flutter_firebase/src/routing/go_router_refr
 import 'package:starter_architecture_flutter_firebase/src/routing/not_found_screen.dart';
 import 'package:starter_architecture_flutter_firebase/src/routing/scaffold_with_nested_navigation.dart';
 
+
 part 'app_router.g.dart';
 
 // private navigators
@@ -41,8 +42,9 @@ enum AppRoute {
 
 @riverpod
 // ignore: unsupported_provider_value
-GoRouter goRouter(GoRouterRef ref) {
+GoRouter goRouter(GoRouterRef ref)  {
   final authRepository = ref.watch(authRepositoryProvider);
+
   final onboardingRepository =
       ref.watch(onboardingRepositoryProvider).requireValue;
   return GoRouter(

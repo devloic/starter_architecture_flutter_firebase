@@ -1,11 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:starter_architecture_flutter_firebase/src/app.dart';
 import 'package:starter_architecture_flutter_firebase/src/app_startup.dart';
 import 'package:starter_architecture_flutter_firebase/src/localization/string_hardcoded.dart';
-// ignore:depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,13 +13,18 @@ Future<void> main() async {
   // * Register error handlers. For more info, see:
   // * https://docs.flutter.dev/testing/errors
   registerErrorHandlers();
-  // * Entry point of the app
-  runApp(ProviderScope(
-    child: AppStartupWidget(
-      onLoaded: (context) => const MyApp(),
-    ),
+
+
+
+
+
+  runApp(const ProviderScope(
+    child:  AppStartupWidget(),
+
   ));
 }
+
+
 
 void registerErrorHandlers() {
   // * Show some error UI if any uncaught exception happens
